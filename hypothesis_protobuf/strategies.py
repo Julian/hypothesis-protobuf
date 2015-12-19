@@ -61,6 +61,8 @@ field_types_and_values = strategies.one_of(
     # type_with_value(FieldDescriptor.TYPE_MESSAGE,
     # type_with_value(FieldDescriptor.TYPE_ENUM,
 )
+
+
 def to_field_descriptor_and_value((type, value), **kwargs):
     # I have no idea why this part is my responsibility.
     cpp_type = FieldDescriptor.ProtoTypeToCppProtoType(type)
