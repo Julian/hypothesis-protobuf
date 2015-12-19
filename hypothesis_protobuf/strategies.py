@@ -2,7 +2,7 @@ from ctypes import c_float
 
 from google.protobuf import reflection
 from google.protobuf.descriptor import Descriptor, FieldDescriptor
-from hypothesis import example, given, strategies
+from hypothesis import strategies
 
 
 def type_with_value(value_strategy, *type_strategies):
