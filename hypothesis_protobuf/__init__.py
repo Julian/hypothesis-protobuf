@@ -1,0 +1,1 @@
+from hypothesis_protobuf._version import __version__
