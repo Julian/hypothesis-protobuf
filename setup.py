@@ -14,7 +14,7 @@ classifiers = [
     "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: 2",
     "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy"
+    "Programming Language :: Python :: Implementation :: PyPy",
 ]
 
 setup(
