@@ -8,7 +8,7 @@ from hypothesis import strategies
 def type_with_value(value_strategy, *type_strategies):
     just = strategies.sampled_from(type_strategies)
     return just.flatmap(
-        lambda field_type : strategies.tuples(
+        lambda field_type: strategies.tuples(
             strategies.just(field_type),
             value_strategy,
         )
@@ -32,7 +32,7 @@ field_types_and_values = strategies.one_of(
     type_with_value(strategies.text(), FieldDescriptor.TYPE_STRING),
     type_with_value(strategies.floats(), FieldDescriptor.TYPE_DOUBLE),
     type_with_value(
-        strategies.floats().map(lambda number : c_float(number).value),
+        strategies.floats().map(lambda number: c_float(number).value),
         FieldDescriptor.TYPE_FLOAT,
     ),
     type_with_value(
@@ -99,7 +99,7 @@ def to_descriptor_and_values(fields_and_values, **kwargs):
 descriptor_and_values = strategies.builds(
     to_descriptor_and_values,
     fields_and_values=strategies.lists(
-        field_and_value, unique_by=lambda (field, _) : field.number,
+        field_and_value, unique_by=lambda (field, _): field.number,
     ),
     name=strategies.binary(min_size=1),
     full_name=full_name,
